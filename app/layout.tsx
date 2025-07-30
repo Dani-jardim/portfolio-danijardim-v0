@@ -1,12 +1,19 @@
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import './globals.css'
+import type React from "react"
+import type { Metadata } from "next"
+import { Montserrat } from "next/font/google"
+import "./globals.css"
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: "Dani Jardim - UX/UI Designer",
+  description: "Portfolio de UX/UI Design focado em experiências digitais",
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -15,17 +22,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" className={montserrat.variable}>
       <head>
         <style>{`
 html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
+  font-family: ${montserrat.style.fontFamily};
+  --font-montserrat: ${montserrat.variable};
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body className="font-montserrat antialiased">{children}</body>
     </html>
   )
 }

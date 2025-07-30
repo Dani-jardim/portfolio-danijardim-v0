@@ -47,28 +47,14 @@ export default function Portfolio() {
     {
       id: 1,
       title: "E-commerce Redesign",
-      description: "Redesign completo de plataforma e-commerce com foco na experiência do usuário",
+      description: "Redesign completo de plataforma e-commerce com foco na experiência do usuário e conversão",
       image: "/placeholder.svg?height=300&width=400",
       url: "#",
     },
     {
       id: 2,
       title: "Mobile Banking App",
-      description: "Design de aplicativo bancário mobile com interface intuitiva e segura",
-      image: "/placeholder.svg?height=300&width=400",
-      url: "#",
-    },
-    {
-      id: 3,
-      title: "SaaS Dashboard",
-      description: "Dashboard para plataforma SaaS com visualização de dados complexos",
-      image: "/placeholder.svg?height=300&width=400",
-      url: "#",
-    },
-    {
-      id: 4,
-      title: "Food Delivery App",
-      description: "Aplicativo de delivery com foco na usabilidade e conversão",
+      description: "Design de aplicativo bancário mobile com interface intuitiva, segura e acessível",
       image: "/placeholder.svg?height=300&width=400",
       url: "#",
     },
@@ -78,36 +64,24 @@ export default function Portfolio() {
     {
       id: 1,
       title: "Micro-interactions Study",
-      description: "Estudo de micro-interações para melhorar o engajamento do usuário",
+      description: "Estudo de micro-interações para melhorar o engajamento e feedback visual do usuário",
       image: "/placeholder.svg?height=300&width=400",
     },
     {
       id: 2,
-      title: "Color Psychology",
-      description: "Experimento sobre o impacto das cores na experiência do usuário",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      id: 3,
-      title: "Typography Exploration",
-      description: "Exploração tipográfica para interfaces digitais modernas",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      id: 4,
       title: "Accessibility Testing",
-      description: "Testes de acessibilidade e inclusão em interfaces digitais",
+      description: "Testes de acessibilidade e inclusão em interfaces digitais para todos os usuários",
       image: "/placeholder.svg?height=300&width=400",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-montserrat">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl" style={{ color: "#7E60BF" }}>
+            <div className="font-bold text-xl font-montserrat" style={{ color: "#7E60BF" }}>
               Dani Jardim
             </div>
 
@@ -121,7 +95,7 @@ export default function Portfolio() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors hover:text-[#7E60BF] ${
+                  className={`text-sm font-medium font-montserrat transition-colors hover:text-[#7E60BF] ${
                     activeSection === item.id ? "text-[#7E60BF]" : "text-[#E2E1D9]"
                   }`}
                 >
@@ -151,7 +125,7 @@ export default function Portfolio() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left py-2 text-sm font-medium transition-colors hover:text-[#7E60BF] ${
+                  className={`block w-full text-left py-2 text-sm font-medium font-montserrat transition-colors hover:text-[#7E60BF] ${
                     activeSection === item.id ? "text-[#7E60BF]" : "text-[#E2E1D9]"
                   }`}
                 >
@@ -178,17 +152,20 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: "#7E60BF" }}>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-montserrat mb-6" style={{ color: "#7E60BF" }}>
             UX/UI Designer
           </h1>
 
-          <p className="text-xl sm:text-2xl mb-4" style={{ color: "#E2E1D9" }}>
+          <p className="text-xl sm:text-2xl mb-4 font-montserrat font-medium" style={{ color: "#E2E1D9" }}>
             Criação de experiências digitais
           </p>
 
-          <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: "#E2E1D9" }}>
+          <p
+            className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed font-montserrat"
+            style={{ color: "#E2E1D9" }}
+          >
             Olá! Eu sou a{" "}
-            <span className="font-semibold" style={{ color: "#7E60BF" }}>
+            <span className="font-semibold font-montserrat" style={{ color: "#7E60BF" }}>
               Dani Jardim
             </span>
             ! Focada em UX Design e apaixonada por boas experiências.
@@ -196,7 +173,7 @@ export default function Portfolio() {
 
           <Button
             onClick={() => scrollToSection("work")}
-            className="text-white font-medium px-8 py-3 rounded-full transition-all hover:scale-105"
+            className="text-white font-medium font-montserrat px-8 py-3 rounded-full transition-all hover:scale-105"
             style={{ backgroundColor: "#7E60BF" }}
           >
             Ver meus projetos
@@ -207,7 +184,7 @@ export default function Portfolio() {
       {/* Work Section - Combined Projects and Experiments */}
       <section id="work" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8" style={{ color: "#7E60BF" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold font-montserrat text-center mb-8" style={{ color: "#7E60BF" }}>
             Meus Trabalhos
           </h2>
 
@@ -216,7 +193,7 @@ export default function Portfolio() {
             <div className="bg-white rounded-full p-1 shadow-lg">
               <button
                 onClick={() => setActiveTab("projects")}
-                className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-8 py-3 rounded-full font-medium font-montserrat transition-all duration-300 ${
                   activeTab === "projects" ? "text-white shadow-md" : "text-[#7E60BF] hover:bg-gray-50"
                 }`}
                 style={{
@@ -227,7 +204,7 @@ export default function Portfolio() {
               </button>
               <button
                 onClick={() => setActiveTab("experiments")}
-                className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-8 py-3 rounded-full font-medium font-montserrat transition-all duration-300 ${
                   activeTab === "experiments" ? "text-white shadow-md" : "text-[#7E60BF] hover:bg-gray-50"
                 }`}
                 style={{
@@ -256,11 +233,11 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-sm">{item.description}</p>
+                    <p className="text-sm font-montserrat">{item.description}</p>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2" style={{ color: "#7E60BF" }}>
+                  <h3 className="text-xl font-semibold font-montserrat mb-2" style={{ color: "#7E60BF" }}>
                     {item.title}
                   </h3>
                 </CardContent>
@@ -273,11 +250,11 @@ export default function Portfolio() {
       {/* About Section */}
       <section id="about" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12" style={{ color: "#7E60BF" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-12" style={{ color: "#7E60BF" }}>
             Sobre mim
           </h2>
 
-          <p className="text-lg mb-12 leading-relaxed" style={{ color: "#E2E1D9" }}>
+          <p className="text-lg mb-12 leading-relaxed font-montserrat" style={{ color: "#E2E1D9" }}>
             Sou uma designer apaixonada por criar experiências digitais que conectam pessoas e resolvem problemas reais.
             Com foco em UX Design, trabalho para transformar ideias complexas em interfaces intuitivas e acessíveis,
             sempre priorizando as necessidades dos usuários.
@@ -285,13 +262,13 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="p-6 rounded-lg" style={{ backgroundColor: "#E4B1F0", color: "#7E60BF" }}>
-              <h3 className="font-semibold text-lg mb-2">☕ Amo design e café</h3>
+              <h3 className="font-semibold text-lg mb-2 font-montserrat">☕ Amo design e café</h3>
             </div>
             <div className="p-6 rounded-lg" style={{ backgroundColor: "#E4B1F0", color: "#7E60BF" }}>
-              <h3 className="font-semibold text-lg mb-2">📸 Já fui fotógrafa</h3>
+              <h3 className="font-semibold text-lg mb-2 font-montserrat">📸 Já fui fotógrafa</h3>
             </div>
             <div className="p-6 rounded-lg" style={{ backgroundColor: "#E4B1F0", color: "#7E60BF" }}>
-              <h3 className="font-semibold text-lg mb-2">❤️ Adoro resolver problemas com empatia</h3>
+              <h3 className="font-semibold text-lg mb-2 font-montserrat">❤️ Adoro resolver problemas com empatia</h3>
             </div>
           </div>
 
@@ -319,7 +296,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm" style={{ color: "#E2E1D9" }}>
+          <p className="text-sm font-montserrat" style={{ color: "#E2E1D9" }}>
             © 2024 Dani Jardim. Todos os direitos reservados.
           </p>
         </div>
