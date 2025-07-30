@@ -46,17 +46,18 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Redesign",
-      description: "Redesign completo de plataforma e-commerce com foco na experiência do usuário e conversão",
-      image: "/placeholder.svg?height=300&width=400",
-      url: "#",
+      title: "Melhorando a experiência de inscrições",
+      description: "Melhorias no site do Rails Girls SP para uma jornada mais fluida e acessível",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-07-30%20at%2011.08.21-35VxDflsHxp6fjL4wtr3tn2iuo6zqk.png",
+      url: "/projeto/1",
     },
     {
       id: 2,
       title: "Mobile Banking App",
       description: "Design de aplicativo bancário mobile com interface intuitiva, segura e acessível",
       image: "/placeholder.svg?height=300&width=400",
-      url: "#",
+      url: "/projeto/2",
     },
   ]
 
@@ -237,9 +238,18 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold font-montserrat mb-2" style={{ color: "#7E60BF" }}>
+                  <h3 className="text-xl font-semibold font-montserrat mb-4" style={{ color: "#7E60BF" }}>
                     {item.title}
                   </h3>
+                  {activeTab === "projects" && item.url && (
+                    <Button
+                      asChild
+                      className="text-white font-medium font-montserrat"
+                      style={{ backgroundColor: "#7E60BF" }}
+                    >
+                      <Link href={item.url}>Ver Projeto</Link>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -251,8 +261,18 @@ export default function Portfolio() {
       <section id="about" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat text-center mb-12" style={{ color: "#7E60BF" }}>
-            Curiosidades sobre mim:
+            Curiosidades
           </h2>
+
+          <p
+            className="text-lg mb-8 max-w-4xl mx-auto leading-relaxed font-montserrat text-center"
+            style={{ color: "#666666" }}
+          >
+            Sou uma profissional multidisciplinar com mais de 10 anos de experiência em design gráfico e comunicação
+            visual, além de vivências em fotografia e desenvolvimento front-end. Ao longo da minha trajetória, sempre
+            estive em busca de unir criatividade, funcionalidade e empatia – e foi justamente isso que me trouxe de
+            volta ao universo do UX Design.
+          </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
             {/* Minha Foto */}
@@ -408,6 +428,12 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="text-center mb-6">
+            <p className="text-lg font-montserrat font-medium" style={{ color: "#7E60BF" }}>
+              Vamos nos conectar?
+            </p>
           </div>
 
           <div className="flex justify-center space-x-6">
