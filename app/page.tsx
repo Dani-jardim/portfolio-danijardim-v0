@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Linkedin, Mail, Menu, X } from "lucide-react"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home")
@@ -82,8 +83,8 @@ export default function Portfolio() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl font-montserrat" style={{ color: "#7E60BF" }}>
-              Dani Jardim
+            <div className="text-xl font-montserrat font-medium" style={{ color: "#7E60BF" }}>
+              [Dani Jardim]
             </div>
 
             {/* Desktop Navigation */}
@@ -141,23 +142,33 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section id="home" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <div className="relative w-48 h-48 mx-auto mb-8">
-              <Image
-                src="/dani-profile.png"
-                alt="Dani Jardim - UX/UI Designer"
-                fill
-                className="rounded-full object-cover shadow-lg"
-                style={{ border: "4px solid #E4B1F0" }}
-              />
-            </div>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-montserrat mb-6" style={{ color: "#7E60BF" }}>
-            UX/UI Designer
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold font-montserrat mb-6 flex items-center justify-center gap-6"
+            style={{ color: "#7E60BF" }}
+          >
+            <span className="text-4xl">UX/UI</span>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="relative w-32 h-32 cursor-pointer">
+                    <Image
+                      src="/dani-profile.png"
+                      alt="Dani Jardim - UX/UI Designer"
+                      fill
+                      className="rounded-full object-cover shadow-lg"
+                      style={{ border: "4px solid #E4B1F0" }}
+                    />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">
+                  <p>Olá! Boas Vindas</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <span className="text-4xl">Designer</span>
           </h1>
 
-          <p className="text-xl sm:text-2xl mb-4 font-montserrat font-medium" style={{ color: "#999999" }}>
+          <p className="text-xl mb-4 font-montserrat tracking-normal leading-7 font-bold sm:text-4xl" style={{ color: "#7E60BF" }}>
             Criação de experiências digitais
           </p>
 
@@ -185,7 +196,7 @@ export default function Portfolio() {
       {/* Work Section - Combined Projects and Experiments */}
       <section id="work" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold font-montserrat text-center mb-8" style={{ color: "#7E60BF" }}>
+          <h2 className="font-bold font-montserrat text-center mb-8 text-3xl" style={{ color: "#7E60BF" }}>
             Meus Trabalhos
           </h2>
 
@@ -212,7 +223,7 @@ export default function Portfolio() {
                   backgroundColor: activeTab === "experiments" ? "#7E60BF" : "transparent",
                 }}
               >
-                Experimentos
+                Experimentos AI
               </button>
             </div>
           </div>
@@ -260,7 +271,7 @@ export default function Portfolio() {
       {/* About Section */}
       <section id="about" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold font-montserrat text-center mb-12" style={{ color: "#7E60BF" }}>
+          <h2 className="font-bold font-montserrat text-center mb-12 text-3xl" style={{ color: "#7E60BF" }}>
             Curiosidades
           </h2>
 
@@ -431,7 +442,7 @@ export default function Portfolio() {
           </div>
 
           <div className="text-center mb-6">
-            <p className="text-lg font-montserrat font-medium" style={{ color: "#7E60BF" }}>
+            <p className="font-montserrat font-semibold text-3xl" style={{ color: "#7E60BF" }}>
               Vamos nos conectar?
             </p>
           </div>
